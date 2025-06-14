@@ -40,3 +40,20 @@ def square_root_bisection(square_target, tolerance=1e-7, max_iterations=100):
             print(f'The square root of {square_target} is approximately {root}')
     
     return root
+def main():
+    while True:
+        try:
+            user_input = input("Enter a non-negative number to find its square root (or 'q' to quit): ").strip()
+            
+            if user_input.lower() == 'q':
+                print("Exiting program. Goodbye!")
+                break
+
+            square_target = float(user_input)
+            result = square_root_bisection(square_target)
+            print(f"Final result: √{square_target} ≈ {result}\n")
+
+        except ValueError as e:
+            print(f"Error: {e}\n")
+
+main()
